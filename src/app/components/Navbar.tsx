@@ -1,54 +1,64 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import ConnectModal from "./ConnectModal";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const [isConnectOpen, setIsConnectOpen] = useState(false);
+
+  const links = [
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Assets", href: "/assets" },
+    { name: "Swap", href: "/swap" },
+    { name: "Staking", href: "/staking" },
+    { name: "Governance", href: "/governance" }
+  ];
+
   return (
-    <div className="w-full flex justify-center mt-6">
-      <div className="w-[90%] max-w-5xl flex items-center justify-between border border-gray-300 rounded-xl px-4 py-2 shadow-sm bg-white/60 backdrop-blur">
-
-        <Link
-          href="/"
-          className="text-gray-800 font-semibold tracking-tight hover:opacity-80 transition"
-        >
-          TipLink
-        </Link>
-
-        <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
-
-          <a
-            href="https://github.com/log1-codes/TipLink.git"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-1.5 text-sm rounded-md hover:bg-white transition"
+    <>
+      <nav className="w-full flex justify-center mt-6 z-40 relative">
+        <div className="w-full max-w-5xl flex items-center justify-between px-6 py-4">
+          
+          {/* Brand */}
+          <Link
+            href="/"
+            className="text-white font-bold text-lg tracking-tight hover:opacity-80 transition"
           >
-            <Image 
-              src="/github-svgrepo-com.svg"   
-              alt="GitHub"
-              width={16}
-              height={16}
-            />
-            <span>Star</span>
-          </a>
+            TipLink
+          </Link>
 
-          <div className="w-px h-4 bg-gray-300" />
+          {/* Links */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link 
+                  key={link.name}
+                  href={link.href} 
+                  className={`pb-1 transition ${isActive ? 'text-white border-b-2 border-primary' : 'text-on-surface-variant hover:text-white border-b-2 border-transparent'}`}
+                >
+                  {link.name}
+                </Link>
+              )
+            })}
+          </div>
 
+          {/* Action */}
           <button
-            onClick={() => console.log("Login with Google")}
-            className="flex items-center cursor-pointer gap-2 px-3 py-1.5 text-sm rounded-md hover:bg-white transition"
+            onClick={() => setIsConnectOpen(true)}
+            className="text-on-primary text-sm font-semibold rounded-full px-5 py-2 transition hover:opacity-90 ambient-shadow cursor-pointer"
+            style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-container))' }}
           >
-            <Image
-              src="/google-icon.svg"
-              alt="Google"
-              width={16}
-              height={16}
-            />
-            <span>Login</span>
+            Connect Wallet
           </button>
 
         </div>
-      </div>
-    </div>
+      </nav>
+
+      <ConnectModal isOpen={isConnectOpen} onClose={() => setIsConnectOpen(false)} />
+    </>
   );
 }
