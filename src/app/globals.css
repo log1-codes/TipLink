@@ -43,7 +43,7 @@ body {
   padding: 0;
 }
 
-/* Base utility classes for the TipLink system */
+/* Base utility classes for the CoinLink system */
 .glass-panel {
   background-color: color-mix(in srgb, var(--color-surface-variant) 40%, transparent);
   backdrop-filter: blur(40px);

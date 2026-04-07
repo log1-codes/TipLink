@@ -12,10 +12,10 @@ export default function Claim() {
           <div className="max-w-md w-full mx-auto lg:mx-0">
             <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Digital Asset Transfer</div>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-              Your TipLink<br/>treasury has<br/><span className="text-primary">arrived.</span>
+              Your CoinLink<br/>treasury has<br/><span className="text-primary">arrived.</span>
             </h1>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-sm">
-              You've received a secure digital gift vault. Claim your assets to integrate them into your TipLink ecosystem.
+              You've received a secure digital gift vault. Claim your assets to integrate them into your CoinLink ecosystem.
             </p>
 
             <div className="space-y-6">
@@ -27,7 +27,7 @@ export default function Claim() {
                   </div>
                   <div>
                      <h3 className="text-sm font-bold text-white mb-1">Connect securely</h3>
-                     <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">Link your TipLink-compatible wallet to proceed.</p>
+                     <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">Link your CoinLink-compatible wallet to proceed.</p>
                   </div>
                </div>
                
@@ -61,7 +61,7 @@ export default function Claim() {
                <div className="flex justify-between items-start mb-10">
                   <div>
                      <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Vault Identity</div>
-                     <div className="text-sm font-bold text-white tracking-widest uppercase">#TIPLINK-7742-X</div>
+                     <div className="text-sm font-bold text-white tracking-widest uppercase">#COINLINK-7742-X</div>
                   </div>
                   <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
                      <div className="w-4 h-4 text-primary">
@@ -102,7 +102,7 @@ export default function Claim() {
                      <div className="w-6 h-6 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center border border-white/5 text-[9px] font-bold text-white">+5</div>
                   </div>
                   <div className="text-[9px] font-bold text-on-surface-variant tracking-widest uppercase">
-                     TipLink Protocol
+                     CoinLink Protocol
                   </div>
                </div>
             </div>
@@ -116,7 +116,7 @@ export default function Claim() {
             {[
                { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Secure Custody', desc: 'Our smart contracts are audited by top-tier security firms to ensure your assets remain uncompromised.' },
                { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Instant Settlement', desc: 'Claims are processed immediately. Once the transaction is confirmed, the funds are natively in your wallet.' },
-               { icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title: 'Multi-Chain Ready', desc: 'Claimable across Ethereum, L2s, and TipLink-linked chains with optimized gas performance.' },
+               { icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title: 'Multi-Chain Ready', desc: 'Claimable across Ethereum, L2s, and CoinLink-linked chains with optimized gas performance.' },
             ].map((feature, i) => (
                <div key={i} className="flex flex-col items-start text-left">
                   <div className="w-5 h-5 text-on-surface-variant mb-4">

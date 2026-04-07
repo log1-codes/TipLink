@@ -16,7 +16,7 @@ export default function ConnectModal({ isOpen, onClose }: { isOpen: boolean, onC
         </div>
         
         <p className="text-sm text-on-surface-variant mb-8 leading-relaxed">
-          Select your gateway to the TipLink ecosystem.<br/>
+          Select your gateway to the CoinLink ecosystem.<br/>
           Secured by institutional-grade encryption.
         </p>
 
@@ -53,8 +53,8 @@ export default function ConnectModal({ isOpen, onClose }: { isOpen: boolean, onC
             </svg>
           </div>
           <p className="leading-relaxed">
-            <strong className="text-white font-semibold block mb-0.5">New to TipLink?</strong>
-            Connecting establishes a secure session. We never store your private keys or phrase. <a href="#" className="text-primary hover:text-primary-container transition">Learn about TipLink Security</a>
+            <strong className="text-white font-semibold block mb-0.5">New to CoinLink?</strong>
+            Connecting establishes a secure session. We never store your private keys or phrase. <a href="#" className="text-primary hover:text-primary-container transition">Learn about CoinLink Security</a>
           </p>
         </div>
       </div>

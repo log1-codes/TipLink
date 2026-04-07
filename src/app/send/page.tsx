@@ -103,7 +103,7 @@ export default function Send() {
                         <div className="w-4 h-4 rounded-full bg-primary shadow-(0_0_8px_rgba(192,193,255,0.6))"></div>
                      </div>
                      <div>
-                        <div className="text-sm font-bold text-white tracking-widest uppercase">TipLink Voucher</div>
+                        <div className="text-sm font-bold text-white tracking-widest uppercase">CoinLink Voucher</div>
                         <div className="text-[10px] text-on-surface-variant uppercase tracking-widest font-semibold">Digital Asset Voucher</div>
                      </div>
                   </div>
@@ -149,7 +149,7 @@ export default function Send() {
                <div>
                   <h4 className="text-sm font-bold text-white mb-1.5">Escrowed Security</h4>
                   <p className="text-xs text-on-surface-variant leading-relaxed">
-                     Funds are securely locked in the TipLink Escrow contract. Only the link holder with the correct credentials can withdraw them.
+                     Funds are securely locked in the CoinLink Escrow contract. Only the link holder with the correct credentials can withdraw them.
                   </p>
                </div>
             </div>

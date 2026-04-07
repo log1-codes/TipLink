@@ -17,7 +17,7 @@ export default function ComingSoon({ title }: { title: string }) {
            
            <h1 className="text-2xl font-bold text-white mb-3 relative z-10">{title}</h1>
            <p className="text-sm text-on-surface-variant leading-relaxed relative z-10">
-             This module is currently under development. Stay tuned for advanced TipLink capabilities.
+             This module is currently under development. Stay tuned for advanced CoinLink capabilities.
            </p>
         </div>
       </main>

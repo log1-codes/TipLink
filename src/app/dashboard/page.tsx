@@ -65,7 +65,7 @@ export default function Dashboard() {
                 {[
                   { name: 'ETH', fullName: 'ETHEREUM', balance: '12.450 ETH', fiat: '$28,124.30', isPrimary: true },
                   { name: 'USDC', fullName: 'CIRCLE USD', balance: '84,200.00', fiat: '$84,200.00', isPrimary: false },
-                  { name: 'TIP', fullName: 'TIPLINK', balance: '3,400.00', fiat: '$12,410.22', isPrimary: false }
+                  { name: 'COIN', fullName: 'COINLINK', balance: '3,400.00', fiat: '$12,410.22', isPrimary: false }
                 ].map((token, i) => (
                   <div key={i} className="glass-panel rounded-2xl p-5 border border-white/5 hover:bg-surface-container-highest transition cursor-pointer">
                     <div className="flex justify-between items-start mb-6">

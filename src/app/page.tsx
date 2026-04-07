@@ -19,7 +19,7 @@ export default function Home() {
         </h1>
 
         <p className="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
-          TipLink is a secure protocol designed for creating, sending, and holding digital assets with precision. Generate non-custodial transfer links, monitor your active treasury, and execute swaps with deep liquidity.
+          CoinLink is a secure protocol designed for creating, sending, and holding digital assets with precision. Generate non-custodial transfer links, monitor your active treasury, and execute swaps with deep liquidity.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-28">
@@ -33,7 +33,7 @@ export default function Home() {
 
         {/* How it works grid */}
         <div id="how-it-works" className="w-full text-left">
-           <h2 className="text-sm font-bold text-on-surface-variant tracking-widest uppercase mb-8">How to use TipLink</h2>
+           <h2 className="text-sm font-bold text-on-surface-variant tracking-widest uppercase mb-8">How to use CoinLink</h2>
            <div className="grid md:grid-cols-3 gap-6">
               <div className="glass-panel p-6 rounded-2xl ghost-border overflow-hidden relative">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
