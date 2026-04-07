@@ -107,10 +107,10 @@ export default function Send() {
 
           {/* Left Side: Form */}
           <div className="max-w-md w-full mx-auto lg:mx-0">
-            <div className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Precision Transfer</div>
-            <h1 className="text-4xl font-bold text-white mb-4">Create Asset Link</h1>
+            <div className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Send SOL</div>
+            <h1 className="text-4xl font-bold text-white mb-4">Create a payment link</h1>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-10">
-              Send funds to anyone via a secure, encrypted claim link. They don&apos;t even need a wallet to accept them.
+              Pick an amount, and we&apos;ll generate a shareable link. Anyone can claim the funds — they just need a browser.
             </p>
 
             {createdLink ? (
@@ -123,8 +123,8 @@ export default function Send() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">Link Generated!</h4>
-                  <p className="text-sm text-on-surface-variant">Share this URL with whoever you want to send the funds to.</p>
+                  <h4 className="text-lg font-bold text-white mb-2">Your link is ready</h4>
+                  <p className="text-sm text-on-surface-variant">Copy it and send it to whoever you like.</p>
                 </div>
 
                 <div className="glass-panel ghost-border rounded-xl p-4 break-all text-xs font-mono text-primary select-all">
@@ -148,7 +148,7 @@ export default function Send() {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
-                        Copy URL
+                        Copy Link
                       </>
                     )}
                   </button>
@@ -156,7 +156,7 @@ export default function Send() {
                     onClick={handleReset}
                     className="px-5 py-3.5 bg-surface-container-highest text-white font-bold rounded-xl hover:bg-surface-container-high transition ghost-border"
                   >
-                    New Link
+                    Send More
                   </button>
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function Send() {
               /* Form State */
               <>
                 <div className="mb-8">
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Amount to Transfer</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Amount</div>
                   <div className="glass-panel ghost-border rounded-xl p-4 flex justify-between items-center bg-surface-container-high transition-colors focus-within:bg-surface-container-lowest focus-within:border-primary/60">
                     <input
                       type="number"
@@ -181,7 +181,7 @@ export default function Send() {
                     </div>
                   </div>
                   <div className="flex justify-between items-center mt-3 text-xs">
-                    <span className="text-on-surface-variant">Balance: {balance.toFixed(4)} SOL</span>
+                    <span className="text-on-surface-variant">Available: {balance.toFixed(4)} SOL</span>
                     <button
                       onClick={handleUseMax}
                       className="text-primary font-bold hover:text-primary-container transition cursor-pointer"
@@ -194,22 +194,22 @@ export default function Send() {
                 {/* Live Preview */}
                 {numericAmount > 0 && (
                   <div className="mb-8 glass-panel ghost-border rounded-xl p-5">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Transfer Summary</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Summary</div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-on-surface-variant">Amount</span>
+                      <span className="text-sm text-on-surface-variant">Sending</span>
                       <span className="text-sm font-bold text-white">{numericAmount.toFixed(4)} SOL</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-on-surface-variant">USD Value</span>
-                      <span className="text-sm font-bold text-white">≈ ${usdValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      <span className="text-sm text-on-surface-variant">Worth about</span>
+                      <span className="text-sm font-bold text-white">${usdValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-on-surface-variant">Network Fee</span>
+                      <span className="text-sm text-on-surface-variant">Network fee</span>
                       <span className="text-sm font-bold text-on-surface-variant">~0.000005 SOL</span>
                     </div>
                     {numericAmount > balance && (
                       <div className="mt-3 px-3 py-2 bg-error/10 border border-error/20 rounded-lg text-xs text-error font-medium">
-                        Insufficient balance
+                        Not enough SOL in your wallet
                       </div>
                     )}
                   </div>
@@ -228,7 +228,7 @@ export default function Send() {
                       <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   )}
-                  {isCreating ? "Generating..." : "Generate Secure Link"}
+                  {isCreating ? "Creating link..." : "Create Payment Link"}
                 </button>
               </>
             )}
@@ -244,13 +244,13 @@ export default function Send() {
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 16v-4M12 8h.01" />
                 </svg>
-                How It Works
+                What happens next
               </h3>
               <div className="space-y-5">
                 {[
-                  { step: "01", title: "Enter Amount", desc: "Specify how much SOL you want to send" },
-                  { step: "02", title: "Generate Link", desc: "An encrypted link is created with funds escrowed" },
-                  { step: "03", title: "Share & Claim", desc: "Recipient opens the link to claim funds instantly" },
+                  { step: "01", title: "You enter an amount", desc: "Type how much SOL you want to send" },
+                  { step: "02", title: "We lock the funds", desc: "SOL moves to a temporary wallet and we create a claim link" },
+                  { step: "03", title: "They open the link", desc: "Recipient signs in and the SOL goes straight to their wallet" },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4 group">
                     <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center shrink-0 text-[10px] font-bold text-primary group-hover:bg-primary/25 transition">
@@ -273,9 +273,9 @@ export default function Send() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white mb-1.5">Escrowed Security</h4>
+                <h4 className="text-sm font-bold text-white mb-1.5">Funds stay locked until claimed</h4>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  Funds are securely locked in the CoinLink Escrow contract. Only the link holder can withdraw them.
+                  The SOL sits in a temporary escrow wallet. Only someone with the link can withdraw it. Nobody else — including us — can touch it.
                 </p>
               </div>
             </div>
@@ -288,12 +288,12 @@ export default function Send() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Solana Devnet</div>
-                  <div className="text-[10px] text-on-surface-variant">Active Network</div>
+                  <div className="text-[10px] text-on-surface-variant">Current network</div>
                 </div>
               </div>
               <div className="flex items-center gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-                <span className="text-[10px] font-bold text-green-400 uppercase tracking-wider">Live</span>
+                <span className="text-[10px] font-bold text-green-400 uppercase tracking-wider">Connected</span>
               </div>
             </div>
 

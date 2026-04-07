@@ -6,10 +6,10 @@ export default function Swap() {
       <Navbar />
       <main className="flex-1 flex flex-col items-center py-12 px-4">
         
-        <div className="texy-center mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2 text-center">Swap Assets</h1>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-white mb-2 text-center">Swap tokens</h1>
           <p className="text-sm text-on-surface-variant max-w-[400px] text-center leading-relaxed">
-            Precision execution with deep liquidity and institutional-grade security.
+            Trade between tokens on Solana. Low fees, fast confirmation.
           </p>
         </div>
 
@@ -19,7 +19,7 @@ export default function Swap() {
             {/* Pay Section */}
             <div className="bg-surface-container-high rounded-xl p-5 mb-2 relative ghost-border">
               <div className="flex justify-between items-center mb-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-                <span>You Pay</span>
+                <span>You pay</span>
                 <span>Balance: 14.50 ETH</span>
               </div>
               <div className="flex justify-between items-center">
@@ -48,8 +48,8 @@ export default function Swap() {
                {/* Shine effect simulation */}
                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
               <div className="flex justify-between items-center mb-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant relative z-10">
-                <span>You Receive</span>
-                <span>Est. 2,450.12</span>
+                <span>You get</span>
+                <span>≈ 2,450.12</span>
               </div>
               <div className="flex justify-between items-center relative z-10">
                  <input type="text" readOnly defaultValue="2,450.12" className="bg-transparent text-4xl font-bold text-white w-full outline-none" />
@@ -68,17 +68,17 @@ export default function Swap() {
             {/* Metrics */}
             <div className="space-y-3 mb-8">
               <div className="flex justify-between items-center text-sm">
-                <span className="text-on-surface-variant">Exchange Rate</span>
+                <span className="text-on-surface-variant">Rate</span>
                 <span className="text-white font-semibold flex items-center gap-2">
                   1 ETH = 2,450.12 USDC
                 </span>
               </div>
               <div className="flex justify-between items-center text-sm">
-                <span className="text-on-surface-variant flex items-center gap-1">Network Fee <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M12 16v-4m0-4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span>
+                <span className="text-on-surface-variant flex items-center gap-1">Network fee <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M12 16v-4m0-4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span>
                 <span className="text-white font-semibold">◈ $4.12</span>
               </div>
               <div className="flex justify-between items-center text-sm">
-                <span className="text-on-surface-variant">Slippage Tolerance</span>
+                <span className="text-on-surface-variant">Max slippage</span>
                 <span className="text-primary font-semibold">0.5%</span>
               </div>
             </div>
@@ -95,9 +95,9 @@ export default function Swap() {
           {/* Info Features Row */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Instant Execution', desc: 'Transactions are processed through our high-speed validator cluster.' },
-              { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Non-Custodial', desc: 'You maintain full control of your private keys.' },
-              { icon: 'M9 20l-5.447-2.724A2 2 0 013 15.489V8.511a2 2 0 01.553-1.787L9 4m6 16l5.447-2.724A2 2 0 0021 15.489V8.511a2 2 0 00-.553-1.787L15 4M9 4v16m6-16v16', title: 'Best Routes', desc: 'Smart routing ensures minimal slippage and optimal returns.' },
+              { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Fast', desc: 'Swaps confirm in under a second on Solana.' },
+              { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Your keys', desc: 'We never hold your tokens. You sign every transaction.' },
+              { icon: 'M9 20l-5.447-2.724A2 2 0 013 15.489V8.511a2 2 0 01.553-1.787L9 4m6 16l5.447-2.724A2 2 0 0021 15.489V8.511a2 2 0 00-.553-1.787L15 4M9 4v16m6-16v16', title: 'Best price', desc: 'Routes are checked across pools to find the lowest cost.' },
             ].map((feature, i) => (
               <div key={i} className="glass-panel ghost-border rounded-xl p-4 md:p-5 flex flex-col items-start text-left">
                 <div className="w-8 h-8 md:w-6 md:h-6 text-primary mb-3">

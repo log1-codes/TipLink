@@ -17,10 +17,10 @@ export default function Claim() {
       if (hash) {
         window.location.href = `/i${hash}`;
       } else {
-        setError("Invalid link structure. Could not find the security key in this URL.");
+        setError("This link doesn't look right. Make sure it contains the full URL with the # key.");
       }
     } catch (e) {
-      setError("Please enter a valid CoinLink URL.");
+      setError("That doesn't look like a valid URL. Double-check and try again.");
     }
   };
 
@@ -33,12 +33,12 @@ export default function Claim() {
 
           {/* Left Side: Hero Text */}
           <div className="max-w-md w-full mx-auto lg:mx-0">
-            <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Digital Asset Transfer</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Claim SOL</div>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-              Your CoinLink<br />treasury has<br /><span className="text-primary">arrived.</span>
+              Someone sent<br />you <span className="text-primary">crypto.</span>
             </h1>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-sm">
-              You've received a secure digital gift vault. Paste the CoinLink URL below to claim your assets instantly.
+              Paste the link you received below. We&apos;ll verify it on-chain and move the SOL into your wallet.
             </p>
 
             <div className="space-y-6">
@@ -49,8 +49,8 @@ export default function Claim() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white mb-1">Connect securely</h3>
-                  <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">Sign in with Google to link your CoinLink wallet.</p>
+                  <h3 className="text-sm font-bold text-white mb-1">Sign in first</h3>
+                  <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">Use your Google account. We&apos;ll set up a wallet if you don&apos;t have one.</p>
                 </div>
               </div>
 
@@ -61,8 +61,8 @@ export default function Claim() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white mb-1">Instant Verification</h3>
-                  <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">Assets are cryptographic signatures verified on-chain.</p>
+                  <h3 className="text-sm font-bold text-white mb-1">Verified on Solana</h3>
+                  <p className="text-[10px] md:text-xs text-on-surface-variant leading-relaxed">We check the link against the blockchain before moving any funds.</p>
                 </div>
               </div>
             </div>
@@ -83,8 +83,8 @@ export default function Claim() {
 
               <div className="flex justify-between items-start mb-8">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Claim Portal</div>
-                  <div className="text-sm font-bold text-white tracking-widest uppercase">CoinLink Receiver</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Claim</div>
+                  <div className="text-sm font-bold text-white tracking-widest uppercase">Paste your link</div>
                 </div>
                 <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
                   <div className="w-4 h-4 text-primary">
@@ -96,12 +96,12 @@ export default function Claim() {
               </div>
 
               <div className="mb-6">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Paste CoinLink URL</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">CoinLink URL</div>
                 <input
                   type="text"
                   value={claimUrl}
                   onChange={(e) => { setClaimUrl(e.target.value); setError(null); }}
-                  placeholder="https://coinlink-six.vercel.app/#"
+                  placeholder="https://coinlink-six.vercel.app/i#..."
                   className="w-full bg-surface-container-highest border border-white/5 rounded-xl px-4 py-4 text-white text-sm font-mono focus:outline-none focus:border-primary/50 transition placeholder:text-on-surface-variant/40"
                 />
                 {error && (
@@ -121,13 +121,13 @@ export default function Claim() {
                   className="w-full text-on-primary text-base font-bold rounded-xl py-4 transition hover:opacity-90 ambient-shadow disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-container))' }}
                 >
-                  Claim Funds
+                  Claim My SOL
                 </button>
                 <Link
                   href="/dashboard"
                   className="block w-full text-center text-white text-sm font-bold rounded-xl py-4 transition bg-surface-container-highest border border-white/5 hover:bg-surface-container-high ghost-border"
                 >
-                  Back to Dashboard
+                  Go to Dashboard
                 </Link>
               </div>
 
@@ -138,7 +138,7 @@ export default function Claim() {
                   <div className="w-6 h-6 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center border border-white/5 text-[9px] font-bold text-white">+5</div>
                 </div>
                 <div className="text-[9px] font-bold text-on-surface-variant tracking-widest uppercase">
-                  CoinLink Protocol
+                  Powered by Solana
                 </div>
               </div>
             </div>
@@ -150,9 +150,9 @@ export default function Claim() {
         {/* Bottom Feature Bar */}
         <div className="grid md:grid-cols-3 gap-6 mt-16 pb-8 border-t border-white/5 pt-10">
           {[
-            { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Secure Custody', desc: 'Smart contracts are audited by top-tier security firms to ensure your assets remain uncompromised.' },
-            { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Instant Settlement', desc: 'Claims are processed immediately. Once confirmed, the funds are natively in your wallet.' },
-            { icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title: 'Solana Native', desc: 'Powered by Solana devnet with near-zero fees and sub-second finality.' },
+            { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Funds are locked', desc: 'SOL sits in an escrow wallet until the recipient claims it. If nobody claims, it stays there.' },
+            { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Settled in seconds', desc: 'Once you hit claim, the SOL moves to your wallet within a few seconds. No waiting around.' },
+            { icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title: 'Runs on Solana', desc: 'Transactions cost a fraction of a cent and confirm in under a second.' },
           ].map((feature, i) => (
             <div key={i} className="flex flex-col items-start text-left">
               <div className="w-5 h-5 text-on-surface-variant mb-4">

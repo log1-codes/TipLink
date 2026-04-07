@@ -8,8 +8,14 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "COINLINK ",
-  description: "Secure Digital Asset Protocol",
+  title: "CoinLink — Send Crypto to Anyone with a Link",
+  description: "Send SOL to anyone using a simple link. No wallet needed to receive. Built on Solana for fast, low-cost transfers.",
+  keywords: ["crypto transfer", "send SOL", "Solana payments", "crypto link", "send crypto without wallet"],
+  openGraph: {
+    title: "CoinLink — Send Crypto to Anyone with a Link",
+    description: "Send SOL to anyone using a simple link. No wallet needed to receive.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
