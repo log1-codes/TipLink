@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { Connection, Keypair, LAMPORTS_PER_SOL, SystemProgram, Transaction, sendAndConfirmTransaction } from "@solana/web3.js";
-import { prisma } from "@/lib/Prisma";
+import { prisma } from "@/lib/prisma"
 import { loadKmsWallet } from "@/lib/wallet";
 import bs58 from "bs58";
 

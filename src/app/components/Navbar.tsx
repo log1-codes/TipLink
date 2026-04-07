@@ -17,10 +17,9 @@ export default function Navbar() {
 
   const links = [
     { name: "Dashboard", href: "/dashboard" },
-    { name: "Assets", href: "/assets" },
+    { name: "Send", href: "/send" },
+    { name: "Claim", href: "/claim" },
     { name: "Swap", href: "/swap" },
-    { name: "Staking", href: "/staking" },
-    { name: "Governance", href: "/governance" },
   ];
 
   return (
