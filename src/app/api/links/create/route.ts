@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     const amountInLamports = Number(amount) * LAMPORTS_PER_SOL;
     const totalFunding = amountInLamports + rentExemptBalance;
 
-    // 2. Generate a new temporary TipLink Keypair
+    // 2. Generate a new temporary CoinLink Keypair
     const tempKeypair = Keypair.generate();
 
     // 3. Create Transfer Transaction
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error("Link Creation Error:", error);
     return NextResponse.json(
-      { error: error.message || "Failed to create TipLink" },
+      { error: error.message || "Failed to create CoinLink" },
       { status: 500 }
     );
   }
