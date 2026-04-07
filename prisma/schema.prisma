@@ -10,7 +10,7 @@ datasource db {
 model User {
   id                  String   @id @default(cuid())
   email               String   @unique
-  googleSub           String   @unique  
+  googleSub           String   @unique
   name                String?
   image               String?
   publicKey           String   @unique
